@@ -29,7 +29,7 @@ set list
 set listchars=tab:>-,trail:-,extends:#
 set nojoinspaces
 set number
-set pastetoggle=<leader>p
+set pastetoggle=<Leader>p
 set relativenumber
 set ruler
 set scrolloff=1
@@ -64,7 +64,7 @@ set wrap
 set mouse=a
 
 " trailing whitespace del
-nnoremap <leader>zz :%s/\s\+$//e<CR>
+nnoremap <Leader>zz :%s/\s\+$//e<CR>
 
 inoremap <C-c> <Esc>
 inoremap <Left> <nop>
@@ -80,6 +80,7 @@ noremap <C-L>   <C-W>l
 noremap <C-n> :bp<CR>
 noremap <C-m> :bn<CR>
 
+nnoremap bd :bd<CR>
 nnoremap td :tabclose<CR>
 nnoremap tn :tabnew<CR>
 nnoremap th :tabprev<CR>
@@ -128,7 +129,7 @@ Plugin 'rking/ag.vim'
 Plugin 'justinmk/vim-sneak'
 Plugin 'godlygeek/tabular'
 Plugin 'majutsushi/tagbar'
-Plugin 'sjl/gundo.vim'
+Plugin 'mbbill/undotree'
 Plugin 'vim-scripts/matchit.zip'
 Plugin 'Raimondi/delimitMate'
 Plugin 'davidhalter/jedi-vim'
@@ -198,8 +199,8 @@ let NERDTreeMouseMode=2
 let NERDTreeShowHidden=1
 let NERDTreeKeepTreeInNewTab=1
 let NERDTreeWinSize=40
-nmap <leader>nt :NERDTreeFind<CR>
-nmap <leader>nn :NERDTreeToggle<CR>
+nmap <Leader>nt :NERDTreeFind<CR>
+nmap <Leader>nn :NERDTreeToggle<CR>
 
 " ---------------
 " Plugin: Airline
@@ -211,44 +212,44 @@ let g:airline_powerline_fonts=1
 " Plugin: fzf
 " -------------
 
-nmap <leader>f   :Files<CR>
-nmap <leader>b   :Buffer<CR>
-nmap <leader>bl  :BLines<CR>
-nmap <leader>l   :Lines<CR>
-nmap <leader>gf  :GFiles<CR>
-nmap <leader>gs  :GFiles?<CR>
-nmap <leader>gco :Commits<CR>
-nmap <leader>gbc :BCommits<CR>
+nmap <Leader>f   :Files<CR>
+nmap <Leader>b   :Buffer<CR>
+nmap <Leader>bl  :BLines<CR>
+nmap <Leader>l   :Lines<CR>
+nmap <Leader>gf  :GFiles<CR>
+nmap <Leader>gs  :GFiles?<CR>
+nmap <Leader>gco :Commits<CR>
+nmap <Leader>gbc :BCommits<CR>
 let g:fzf_preview_window = ['right:50%', 'ctrl-/']
 
 
 " -------------------
 " Plugin: Python mode
 " -------------------
-let g:pymode_breakpoint_bind = '<leader>pb'
+let g:pymode_breakpoint_bind = '<Leader>pb'
 let g:pymode_folding = 0
 let g:pymode_lint_checkers = ['pep8']
 let g:pymode_lint_ignore = 'W0401,E402,W0611,C901'
 let g:pymode_lint_unmodified = 1
 let g:pymode_options = 0
 let g:pymode_rope = 0
-let g:pymode_run_bind = '<leader>pr'
+let g:pymode_run_bind = '<Leader>pr'
 let g:pymode_python = 'python'
 
 
 " ----------------
 " Plugin: Fugitive
 " ----------------
-nnoremap <leader>gc :Git checkout 
-nnoremap <leader>gb :Git branch 
-nnoremap <leader>gm :Git merge 
-nnoremap <leader>gg :Git blame<CR>
-nnoremap <leader>gs :Git<CR>
-nnoremap <leader>gd :Gdiff<CR>
-nnoremap <silent> <leader>gl :Git pull 
-nnoremap <silent> <leader>gp :Git push 
-nnoremap <silent> <leader>gw :Gwrite<CR>
-nnoremap <silent> <leader>gr :Gread<CR>
+nnoremap <Leader>gc :Git checkout 
+nnoremap <Leader>gb :Git branch 
+nnoremap <Leader>gm :Git merge 
+nnoremap <Leader>gg :Git blame<CR>
+nnoremap <Leader>gs :Git<CR>
+nnoremap <Leader>gd :Gdiff<CR>
+nnoremap <silent> <Leader>gl :Git pull 
+nnoremap <silent> <Leader>gp :Git push 
+nnoremap <silent> <Leader>gw :Gwrite<CR>
+nnoremap <silent> <Leader>gr :Gread<CR>
 
 
 " ----------------
@@ -260,14 +261,14 @@ nnoremap <Leader>m :<C-u>call gitblame#echo()<CR>
 " ------------
 " Plugin: Jedi
 " ------------
-let g:jedi#goto_command = "<leader>g"
-let g:jedi#goto_assignments_command = "<leader>a"
-let g:jedi#goto_stubs_command = "<leader>s"
-let g:jedi#goto_definitions_command = "<leader>d"
+let g:jedi#goto_command = "<Leader>g"
+let g:jedi#goto_assignments_command = "<Leader>a"
+let g:jedi#goto_stubs_command = "<Leader>s"
+let g:jedi#goto_definitions_command = "<Leader>d"
 let g:jedi#documentation_command = "K"
-let g:jedi#usages_command = "<leader>n"
+let g:jedi#usages_command = "<Leader>n"
 let g:jedi#completions_command = "<C-Space>"
-let g:jedi#rename_command = "<leader>r"
+let g:jedi#rename_command = "<Leader>r"
 let g:jedi#show_call_signatures = 0
 let g:jedi#use_tabs_not_buffers = 0
 let g:jedi#completions_enabled = 0
@@ -279,14 +280,30 @@ let g:jedi#added_sys_path = ['/Users/yg_jung/.virtualenvs/queenspark/lib/python2
 " ------------------
 " Plugin: Easymotion
 " ------------------
-let g:EasyMotion_do_mapping = 0
-let g:EasyMotion_smartcase  = 1
-map <SPACE> <Plug>(easymotion-s2)
+" s{char}{char} to move to {char}{char}
+nmap <Leader>s <Plug>(easymotion-overwin-f2)
 
-" -------------
-" Plugin: Gundo
-" -------------
-nnoremap <leader>u :GundoToggle<CR>
+" Move to word
+map  <Leader>w <Plug>(easymotion-bd-w)
+nmap <Leader>w <Plug>(easymotion-overwin-w)
+
+
+" -----------------
+" Plugin: Undotree
+" -----------------
+nnoremap <Leader>u :UndotreeToggle<CR>:UndotreeFocus<CR>
+if !exists('g:undotree_WindowLayout')
+    let g:undotree_WindowLayout = 2
+endif
+if !exists('g:undotree_SplitWidth')
+    let g:undotree_SplitWidth = 40
+endif
+if !exists('g:undotree_DiffpanelHeight')
+    let g:undotree_DiffpanelHeight = 20
+endif
+if !exists('g:undotree_DiffAutoOpen')
+    let g:undotree_DiffAutoOpen = 1
+endif
 
 " -----------------
 " Plugin: Gitgutter
@@ -297,8 +314,8 @@ let g:gitgutter_max_signs=5000
 " ----------
 " Plugin: Ag
 " ----------
-nnoremap <leader>aa :Ag 
-nnoremap <leader>as :Ag <cword><CR>
+nnoremap <Leader>aa :Ag 
+nnoremap <Leader>as :Ag <cword><CR>
 
 " ---------------
 " Plugin: Tabular
