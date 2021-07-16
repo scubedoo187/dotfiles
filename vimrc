@@ -97,6 +97,7 @@ set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz
 set wildignore+=*/.sass-cache/*
 set wildignore+=*.swp,*~,._*
 
+autocmd BufEnter * syntax sync fromstart
 autocmd bufnewfile,bufread *.go set filetype=go
 autocmd bufnewfile,bufread *.html set filetype=htmldjango
 autocmd bufnewfile,bufread *.jinja set filetype=htmldjango
@@ -202,11 +203,20 @@ let NERDTreeWinSize=40
 nmap <Leader>nt :NERDTreeFind<CR>
 nmap <Leader>nn :NERDTreeToggle<CR>
 
+
+" ---------------------
+" Plugin: Nerdcommenter
+" ---------------------
+
+let g:NERDDefaultAlign = 'left'
+
+
 " ---------------
 " Plugin: Airline
 " ---------------
 let g:airline#extensions#tabline#enabled=1
 let g:airline_powerline_fonts=1
+
 
 " -------------
 " Plugin: fzf
