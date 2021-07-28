@@ -5,20 +5,11 @@ cd ~
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 # Install other packages
-brew install git
-brew install the_silver_searcher
-brew install tmux
-brew install zsh
-brew install fzf
-brew install ctags-exuberant
-brew install wget
-brew install httpie
-brew install lsd
+brew install --force git the_silver_searcher tmux zsh fzf ctags-exuberant wget httpie \
+    lsd pyenv pyenv-virtualenv direnv
 
 # Install python packages
 sudo easy_install pip
-sudo pip install virtualenv
-sudo pip install virtualenvwrapper --ignore-installed
 
 # Install Oh My Zsh
 if [ -d ".oh-my-zsh" ]; then

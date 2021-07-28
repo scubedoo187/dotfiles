@@ -1,7 +1,7 @@
 export ZSH=$HOME/.oh-my-zsh
 export UPDATE_ZSH_DAYS=13
 
-ZSH_THEME="agnoster"
+ZSH_THEME="robbyrussell"
 CASE_SENSITIVE="true"
 DISABLE_AUTO_UPDATE="true"
 DISABLE_LS_COLORS="false"
@@ -16,7 +16,15 @@ if [ -n $TMUX ]; then
     alias vim="TERM=screen-256color vim"
 fi
 
-plugins=(git python virtualenv vi-mode tmux tmuxinator)
+plugins=(
+    git
+    dotenv
+    python
+    tmux
+    tmuxinator
+    virtualenv
+    vi-mode
+)
 
 source $ZSH/oh-my-zsh.sh
 [ -f "$HOME/.zshrc.local" ] && source ~/.zshrc.local

@@ -11,7 +11,7 @@ let mapleader=","
 set autoindent
 set backspace=indent,eol,start
 set backupdir=~/.tmp/vim/backup/
-set colorcolumn=80
+set colorcolumn=89
 set copyindent
 set cursorline
 set directory=~/.tmp/vim/swap/
@@ -48,7 +48,7 @@ set statusline+=%{fugitive#statusline()} " Git Hotness
 set statusline+=\ [%{&ff}/%Y]            " Filetype
 set statusline+=\ [%{getcwd()}]          " Current dir
 set tabstop=4
-set textwidth=79
+set textwidth=88
 set title
 set undodir=~/.tmp/vim/undo/
 set undofile
@@ -103,7 +103,7 @@ autocmd bufnewfile,bufread *.html set filetype=htmldjango
 autocmd bufnewfile,bufread *.jinja set filetype=htmldjango
 autocmd bufnewfile,bufread *.json,*.jsx,*.tsx set filetype=javascript
 autocmd filetype html,htmldjango,htmljinja,jinja,less,css,scss,javascript,yaml,xml
-            \ setlocal ts=2 sts=2 sw=2 colorcolumn=80 smarttab copyindent
+            \ setlocal ts=2 sts=2 sw=2 colorcolumn=89 smarttab copyindent
 
 " -------
 " Plugins
@@ -207,7 +207,6 @@ nmap <Leader>nn :NERDTreeToggle<CR>
 " ---------------------
 " Plugin: Nerdcommenter
 " ---------------------
-
 let g:NERDDefaultAlign = 'left'
 
 
@@ -221,7 +220,6 @@ let g:airline_powerline_fonts=1
 " -------------
 " Plugin: fzf
 " -------------
-
 nmap <Leader>f   :Files<CR>
 nmap <Leader>b   :Buffer<CR>
 nmap <Leader>bl  :BLines<CR>
@@ -245,6 +243,7 @@ let g:pymode_options = 0
 let g:pymode_rope = 0
 let g:pymode_run_bind = '<Leader>pr'
 let g:pymode_python = 'python'
+let g:pymode_options_max_line_length = 88
 
 
 " ----------------
@@ -276,15 +275,15 @@ let g:jedi#goto_assignments_command = "<Leader>a"
 let g:jedi#goto_stubs_command = "<Leader>s"
 let g:jedi#goto_definitions_command = "<Leader>d"
 let g:jedi#documentation_command = "K"
-let g:jedi#usages_command = "<Leader>n"
-let g:jedi#completions_command = "<C-Space>"
+let g:jedi#completions_command = "<C-N>"
 let g:jedi#rename_command = "<Leader>r"
 let g:jedi#show_call_signatures = 0
 let g:jedi#use_tabs_not_buffers = 0
-let g:jedi#completions_enabled = 0
-let g:jedi#smart_auto_mappings = 0
+let g:jedi#completions_enabled = 1
+let g:jedi#smart_auto_mappings = 1
 let g:jedi#popup_on_dot = 0
 let g:jedi#added_sys_path = ['/Users/yg_jung/.virtualenvs/queenspark/lib/python2.7/site-packages', '/Users/yg_jung/.virtualenvs/queenspark/src/django-haystack']
+let g:pymode_rope = 0
 
 
 " ------------------
@@ -292,7 +291,6 @@ let g:jedi#added_sys_path = ['/Users/yg_jung/.virtualenvs/queenspark/lib/python2
 " ------------------
 " s{char}{char} to move to {char}{char}
 nmap <Leader>s <Plug>(easymotion-overwin-f2)
-
 " Move to word
 map  <Leader>w <Plug>(easymotion-bd-w)
 nmap <Leader>w <Plug>(easymotion-overwin-w)
@@ -326,6 +324,7 @@ let g:gitgutter_max_signs=5000
 " ----------
 nnoremap <Leader>aa :Ag 
 nnoremap <Leader>as :Ag <cword><CR>
+
 
 " ---------------
 " Plugin: Tabular
@@ -379,7 +378,9 @@ let g:syntastic_check_on_wq = 0
 " -----------
 " Plugin: Ale
 " -----------
-let b:ale_linters = {'javascript': ['eslint']}
+let b:ale_linters = {'javascript': ['eslint'],'python': ['flake8']}
+let g:ale_fixers = {'python': ['black', 'isort']}
+nmap <Leader>ale :ALEFix<CR>
 
 
 " ---------------------
@@ -388,5 +389,3 @@ let b:ale_linters = {'javascript': ['eslint']}
 
 let g:indent_guides_auto_colors = 1
 let g:indent_guides_enable_on_vim_startup = 1
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=gray
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=blue
