@@ -121,6 +121,8 @@ Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plugin 'junegunn/fzf.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plugin 'ryanoasis/vim-devicons'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-sensible'
@@ -208,6 +210,14 @@ nmap <Leader>nn :NERDTreeToggle<CR>
 " Plugin: Nerdcommenter
 " ---------------------
 let g:NERDDefaultAlign = 'left'
+
+
+" ----------------------------------
+" Plugin: VimNerdtreeSyntaxHighlight
+" ----------------------------------
+let g:NERDTreeFileExtensionHighlightFullName = 1
+let g:NERDTreeExactMatchHighlightFullName = 1
+let g:NERDTreePatternMatchHighlightFullName = 1
 
 
 " ---------------
