@@ -77,9 +77,8 @@ noremap <C-K>   <C-W>k
 noremap <C-H>   <C-W>h
 noremap <C-L>   <C-W>l
 
-noremap <C-n> :bp<CR>
-noremap <C-m> :bn<CR>
-
+nnoremap bn :bp<CR>
+nnoremap bm :bn<CR>
 nnoremap bd :bd<CR>
 nnoremap td :tabclose<CR>
 nnoremap tn :tabnew<CR>
@@ -150,6 +149,7 @@ Plugin 'christoomey/vim-tmux-navigator'
 
 " Snippet
 Plugin 'honza/vim-snippets'
+Plugin 'mg979/vim-visual-multi'
 
 " Language / Syntax
 Plugin 'pangloss/vim-javascript'
