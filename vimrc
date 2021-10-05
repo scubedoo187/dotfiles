@@ -138,6 +138,7 @@ Plugin 'davidhalter/jedi-vim'
 Plugin 'klen/python-mode'
 Plugin 'michaeljsmith/vim-indent-object'
 Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'mhinz/vim-startify'
 
 " Git
 Plugin 'airblade/vim-gitgutter'
@@ -399,3 +400,13 @@ nmap <Leader>ale :ALEFix<CR>
 
 let g:indent_guides_auto_colors = 1
 let g:indent_guides_enable_on_vim_startup = 1
+
+
+" ----------------
+" Plugin: Startify
+" ----------------
+
+let g:startify_bookmarks = systemlist("cut -sd' ' -f 2- ~/.NERDTreeBookmarks")
+nnoremap <leader>sl :SLoad 
+nnoremap <leader>sc :SClose<CR>
+nnoremap <leader>ss :SSave 
