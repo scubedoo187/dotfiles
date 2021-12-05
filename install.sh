@@ -60,3 +60,6 @@ fi
 
 vim +PluginInstall +qall
 ~/.tmux/plugins/tpm/scripts/install_plugins.sh
+
+mkdir -p ~/.config/nvim/bundle
+nvim +qall

@@ -111,7 +111,8 @@ autocmd filetype html,htmldjango,htmljinja,jinja,less,css,scss,javascript,yaml,x
 filetype off
 set rtp +=~/.vim/bundle/Vundle.vim/
 set rtp +=/usr/local/bin/fzf
-call vundle#begin()
+set rtp +=~/.config/nvim/bundle/Vundle.vim
+call vundle#begin("~/.config/nvim/bundle")
 
 Plugin 'gmarik/Vundle.vim'
 
@@ -152,7 +153,7 @@ Plugin 'honza/vim-snippets'
 Plugin 'mg979/vim-visual-multi'
 
 " Language / Syntax
-Plugin 'neoclide/coc.nvim', { 'branch': 'master', 'do': 'npm install' }
+Plugin 'neoclide/coc.nvim', {'branch': 'release'}
 Plugin 'pangloss/vim-javascript'
 Plugin 'yuezk/vim-js'
 Plugin 'maxmellon/vim-jsx-pretty'
@@ -525,13 +526,4 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
-let g:coc_global_extensions = [
-    'coc-json',
-    'coc-git',
-    'coc-pyright',
-    'coc-tsserver',
-    'coc-eslint',
-    'coc-tslint-plugin',
-    'coc-styled-components',
-    'coc-prettier'
-]
+let g:coc_global_extensions = ['coc-json', 'coc-git', 'coc-pyright', 'coc-tsserver', 'coc-eslint', 'coc-tslint-plugin', 'coc-styled-components', 'coc-prettier']
