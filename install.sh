@@ -6,7 +6,11 @@ cd ~
 
 # Install other packages
 brew install --force git the_silver_searcher tmux zsh fzf ctags-exuberant wget httpie \
-    lsd pyenv pyenv-virtualenv direnv
+    lsd pyenv pyenv-virtualenv direnv neovim node
+
+# Font
+brew tap homebrew/cask-fonts
+brew install --cask font-hack-nerd-font
 
 # Install python packages
 sudo easy_install pip
@@ -58,8 +62,11 @@ else
     git clone https://github.com/gmarik/Vundle.vim.git .vim/bundle/Vundle.vim
 fi
 
+npm install -g yarn
+
 vim +PluginInstall +qall
 ~/.tmux/plugins/tpm/scripts/install_plugins.sh
 
 mkdir -p ~/.config/nvim/bundle
+cp init.vim ~/.config/nvim/init.vim
 nvim +qall

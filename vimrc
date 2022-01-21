@@ -135,7 +135,6 @@ Plugin 'majutsushi/tagbar'
 Plugin 'mbbill/undotree'
 Plugin 'vim-scripts/matchit.zip'
 Plugin 'Raimondi/delimitMate'
-Plugin 'klen/python-mode'
 Plugin 'michaeljsmith/vim-indent-object'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'mhinz/vim-startify'
@@ -241,21 +240,6 @@ nmap <Leader>gs  :GFiles?<CR>
 nmap <Leader>gco :Commits<CR>
 nmap <Leader>gbc :BCommits<CR>
 let g:fzf_preview_window = ['right:50%', 'ctrl-/']
-
-
-" -------------------
-" Plugin: Python mode
-" -------------------
-let g:pymode_breakpoint_bind = '<Leader>pb'
-let g:pymode_folding = 0
-let g:pymode_lint_checkers = ['pep8']
-let g:pymode_lint_ignore = 'W0401,E402,W0611,C901'
-let g:pymode_lint_unmodified = 1
-let g:pymode_options = 0
-let g:pymode_rope = 0
-let g:pymode_run_bind = '<Leader>pr'
-let g:pymode_python = 'python'
-let g:pymode_options_max_line_length = 88
 
 
 " ----------------
@@ -371,7 +355,7 @@ let g:syntastic_check_on_wq = 0
 " -----------
 " Plugin: Ale
 " -----------
-let b:ale_linters = {'javascript': ['eslint'],'python': ['flake8']}
+let b:ale_linters = {'javascript': ['eslint'], 'python': ['flake8']}
 let g:ale_fixers = {'python': ['black', 'isort']}
 nmap <Leader>ale :ALEFix<CR>
 
