@@ -68,5 +68,5 @@ vim +PluginInstall +qall
 ~/.tmux/plugins/tpm/scripts/install_plugins.sh
 
 mkdir -p ~/.config/nvim/bundle
-cp init.vim ~/.config/nvim/init.vim
+ln -s .dotfiles/init.vim ~/.config/nvim/init.vim
 nvim +qall
