@@ -165,6 +165,7 @@ Plugin 'styled-components/vim-styled-components'
 Plugin 'jparise/vim-graphql'
 Plugin 'w0rp/ale'
 Plugin 'vim-syntastic/syntastic.git'
+Plugin 'Vimjas/vim-python-pep8-indent'
 
 " Theme / Appearance
 Plugin 'bling/vim-airline'
@@ -243,14 +244,16 @@ let g:fzf_preview_window = ['right:50%', 'ctrl-/']
 " ----------------
 " Plugin: Fugitive
 " ----------------
-nnoremap <Leader>gc :Git checkout 
-nnoremap <Leader>gb :Git branch 
-nnoremap <Leader>gm :Git merge 
-nnoremap <Leader>gg :Git blame<CR>
-nnoremap <Leader>gs :Git<CR>
+nnoremap <Leader>gc :G checkout 
+nnoremap <Leader>gb :G branch 
+nnoremap <Leader>gm :G merge 
+nnoremap <Leader>gg :G blame<CR>
+nnoremap <Leader>gs :G<CR>
 nnoremap <Leader>gd :Gdiff<CR>
-nnoremap <silent> <Leader>gl :Git pull 
-nnoremap <silent> <Leader>gp :Git push 
+nnoremap <Leader>gl :G log<CR>
+nnoremap <Leader>gf :G fetch origin<CR>
+nnoremap <Leader>ggl :G pull origin 
+nnoremap <Leader>gpp :G push origin 
 nnoremap <silent> <Leader>gw :Gwrite<CR>
 nnoremap <silent> <Leader>gr :Gread<CR>
 

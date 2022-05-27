@@ -23,7 +23,6 @@ plugins=(
     tmux
     tmuxinator
     virtualenv
-    vi-mode
     zsh-autosuggestions
 )
 
