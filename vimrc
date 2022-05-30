@@ -126,7 +126,6 @@ Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-sensible'
 Plugin 'rstacruz/sparkup'
 Plugin 'easymotion/vim-easymotion'
-Plugin 'rking/ag.vim'
 Plugin 'justinmk/vim-sneak'
 Plugin 'godlygeek/tabular'
 Plugin 'majutsushi/tagbar'
@@ -238,6 +237,7 @@ nmap <Leader>gf  :GFiles<CR>
 nmap <Leader>gs  :GFiles?<CR>
 nmap <Leader>gco :Commits<CR>
 nmap <Leader>gbc :BCommits<CR>
+nmap <Leader>aa  :Ag 
 let g:fzf_preview_window = ['right:50%', 'ctrl-/']
 
 
@@ -297,13 +297,6 @@ endif
 let g:gitgutter_max_signs=5000
 
 
-" ----------
-" Plugin: Ag
-" ----------
-nnoremap <Leader>aa :Ag 
-nnoremap <Leader>as :Ag <cword><CR>
-
-
 " ---------------
 " Plugin: Tabular
 " ---------------
@@ -357,7 +350,7 @@ let g:syntastic_check_on_wq = 0
 " Plugin: Ale
 " -----------
 let b:ale_linters = {'javascript': ['eslint'], 'python': ['flake8']}
-let g:ale_fixers = {'python': ['black', 'isort']}
+let g:ale_fixers = {'python': ['isort']}
 nmap <Leader>ale :ALEFix<CR>
 
 
