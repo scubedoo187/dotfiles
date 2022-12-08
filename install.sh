@@ -5,7 +5,7 @@ cd ~
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 # Install other packages
-brew install --force git the_silver_searcher tmux zsh fzf ctags-exuberant wget httpie \
+brew install --force git the_silver_searcher tmux zsh fzf universal-ctags wget httpie \
     lsd pyenv pyenv-virtualenv direnv neovim node lazydocker
 
 # Font

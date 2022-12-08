@@ -61,6 +61,7 @@ set wildmenu
 set wildmode=list:longest
 set wrap
 set mouse=a
+set updatetime=100
 
 " trailing whitespace del
 nnoremap <Leader>zz :%s/\s\+$//e<CR>
@@ -117,7 +118,6 @@ Plugin 'gmarik/Vundle.vim'
 " Plugin list
 Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plugin 'junegunn/fzf.vim'
-"Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plugin 'ryanoasis/vim-devicons'
@@ -327,6 +327,8 @@ vmap <Leader>t<Bar> :Tabularize /<Bar><CR>
 " ---------------
 " Plugin: tagbar
 " ---------------
+let g:tagbar_left = 1
+let g:tagbar_width = max([25, winwidth(0) / 5])
 nmap <Leader>ta :TagbarToggle<CR>
 
 
